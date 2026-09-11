@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/engineering-skills/registry/main/engineering/testing/missed-case-detector/schemas/test-gap.schema.json",
+  "title": "TestGapRecord",
+  "type": "object",
+  "required": [
+    "id",
+    "flow_name",
+    "category",
+    "scenario",
+    "severity",
+    "risk_description",
+    "affected_components",
+    "current_coverage",
+    "recommended_test_type",
+    "recommended_test_case"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^GAP-[0-9]{3,4}$"
+    },
+    "flow_name": { "type": "string" },
+    "category": {
+      "type": "string",
+      "enum": [
+        "race-condition",
+        "partial-failure",
+        "timeout-retry",
+        "concurrency-lock",
+        "idempotency-replay",
+        "unauthorized-mutation",
+        "boundary-overflow",
+        "state-machine-skip",
+        "out-of-order-events",
+        "resource-leak",
+        "silent-failure"
+      ]
+    },
+    "scenario": { "type": "string", "minLength": 5 },
+    "severity": {
+      "type": "string",
+      "enum": ["critical", "high", "medium", "low"]
+    },
+    "risk_description": { "type": "string", "minLength": 10 },
+    "affected_components": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "current_coverage": {
+      "type": "string",
+      "enum": ["none", "partial", "unverified"]
+    },
+    "recommended_test_type": {
+      "type": "string",
+      "enum": ["unit", "integration", "differential", "stress", "contract"]
+    },
+    "recommended_test_case": { "type": "string", "minLength": 10 }
+  }
+}

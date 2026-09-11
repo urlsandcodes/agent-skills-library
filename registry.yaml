@@ -177,3 +177,25 @@ skills:
       - "governance"
       - "audit"
       - "invariants"
+
+  - id: "testing.missed-case-detector"
+    name: "Flow & Edge-Case Test Gap Detector"
+    version: "1.0.0"
+    type: "intelligence"
+    category: "quality-engineering"
+    status: "internal"
+    source_id: "internal"
+    manifest_path: "engineering/testing/missed-case-detector/manifest.yaml"
+    description: "Inspects architectural flows, invariants, and state transitions against existing test suites to identify uncovered edge cases, failure modes, and race conditions."
+    tags:
+      - "testing"
+      - "qa"
+      - "test-coverage"
+      - "edge-cases"
+      - "gap-analysis"
+      - "verification"
+    dependencies:
+      - id: "architecture.system-validator"
+        version: ">=1.0.0"
+        kind: "recommended"
+
