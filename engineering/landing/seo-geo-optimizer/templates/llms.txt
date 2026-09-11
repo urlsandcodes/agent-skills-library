@@ -1,0 +1,20 @@
+# {{PROJECT_NAME}}
+
+> {{PROJECT_TAGLINE}}
+
+{{PROJECT_DESCRIPTION}}
+
+## Core Capabilities
+- {{CAPABILITY_1}}
+- {{CAPABILITY_2}}
+- {{CAPABILITY_3}}
+
+## Key Product Pages
+- [Home & Landing Page]({{SITE_URL}}): Overview of features, pricing, and architecture.
+- [Storefront]({{SITE_URL}}/store): Public catalog of digital products and memberships.
+- [Documentation & FAQ]({{SITE_URL}}/#faq): Direct answers to billing, setup, and platform policies.
+
+## Technical Specifications
+- Architecture: {{TECH_STACK}}
+- Monetization Model: {{PRICING_MODEL}}
+- Supported Integrations: {{INTEGRATIONS}}

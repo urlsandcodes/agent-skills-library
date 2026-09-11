@@ -199,3 +199,26 @@ skills:
         version: ">=1.0.0"
         kind: "recommended"
 
+  - id: "landing.seo-geo-optimizer"
+    name: "Landing Page SEO & GEO/AEO Optimizer"
+    version: "1.0.0"
+    type: "intelligence"
+    category: "quality-engineering"
+    status: "internal"
+    source_id: "internal"
+    manifest_path: "engineering/landing/seo-geo-optimizer/manifest.yaml"
+    description: "Systematically audits and optimizes web landing pages for Technical SEO, Generative Engine Optimization (GEO), and Answer Engine Optimization (AEO)."
+    tags:
+      - "seo"
+      - "geo"
+      - "aeo"
+      - "landing-page"
+      - "schema-org"
+      - "llms-txt"
+      - "ai-search"
+    dependencies:
+      - id: "architecture.system-validator"
+        version: ">=1.0.0"
+        kind: "recommended"
+
+

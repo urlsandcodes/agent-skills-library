@@ -1,0 +1,65 @@
+schema_version: "1.0.0"
+id: "landing.seo-geo-optimizer"
+name: "Landing Page SEO & GEO/AEO Optimizer"
+version: "1.0.0"
+type: "intelligence"
+status: "internal"
+category: "quality-engineering"
+description: "Systematically audits and optimizes web landing pages for Technical SEO, Generative Engine Optimization (GEO), and Answer Engine Optimization (AEO)."
+tags:
+  - "seo"
+  - "geo"
+  - "aeo"
+  - "landing-page"
+  - "schema-org"
+  - "llms-txt"
+  - "ai-search"
+
+provider:
+  id: "internal"
+  name: "Internal Engineering Architecture"
+  website: "https://github.com/engineering-skills/registry"
+
+source:
+  type: "internal"
+  repository: "local/engineering-skills"
+  ref_type: "local"
+  ref: "v1.0.0"
+  commit: "local"
+  path: "engineering/landing/seo-geo-optimizer"
+  license: "Apache-2.0"
+  verified_at: "2026-09-11T10:00:00Z"
+  integrity:
+    algorithm: "sha256"
+    hash: "a4a5b4e7cb3a284f1315918b73e6dea8e2969048b48b57138c3a771957192571"
+
+capabilities:
+  provides:
+    - "technical-seo-audit"
+    - "generative-engine-optimization"
+    - "answer-engine-optimization"
+    - "schema-org-jsonld-synthesis"
+    - "llms-txt-generation"
+  produces_artifacts:
+    - "seo-geo-audit.json"
+    - "seo-geo-audit-report.md"
+    - "llms.txt"
+
+dependencies:
+  - id: "architecture.system-validator"
+    version: ">=1.0.0"
+    kind: "recommended"
+
+conflicts: []
+
+compatibility:
+  min_agent_api: "1.0.0"
+  operating_systems: ["mac", "linux", "windows"]
+
+entrypoints:
+  skill_doc: "SKILL.md"
+  schema_dir: "schemas"
+  template_dir: "templates"
+
+update_policy:
+  mode: "manual"

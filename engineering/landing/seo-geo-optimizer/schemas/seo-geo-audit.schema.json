@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/engineering-skills/registry/main/engineering/landing/seo-geo-optimizer/schemas/seo-geo-audit.schema.json",
+  "title": "SeoGeoAuditReport",
+  "type": "object",
+  "required": [
+    "target",
+    "audited_at",
+    "overall_score",
+    "pillar_scores",
+    "findings",
+    "recommendations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "target": { "type": "string" },
+    "audited_at": { "type": "string", "format": "date-time" },
+    "overall_score": { "type": "number", "minimum": 0, "maximum": 100 },
+    "pillar_scores": {
+      "type": "object",
+      "required": [
+        "technical_seo",
+        "geo_citability",
+        "aeo_direct_answer",
+        "structured_data"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "technical_seo": { "type": "number", "minimum": 0, "maximum": 25 },
+        "geo_citability": { "type": "number", "minimum": 0, "maximum": 25 },
+        "aeo_direct_answer": { "type": "number", "minimum": 0, "maximum": 25 },
+        "structured_data": { "type": "number", "minimum": 0, "maximum": 25 }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "pillar", "status", "title", "remediation"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "pillar": {
+            "type": "string",
+            "enum": ["technical_seo", "geo_citability", "aeo_direct_answer", "structured_data"]
+          },
+          "status": {
+            "type": "string",
+            "enum": ["pass", "fail", "warning"]
+          },
+          "title": { "type": "string" },
+          "details": { "type": "string" },
+          "remediation": { "type": "string" }
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}
