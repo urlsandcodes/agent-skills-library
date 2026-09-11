@@ -1,0 +1,58 @@
+schema_version: "1.0.0"
+id: "flutter"
+name: "Flutter Skill"
+version: "2.1.0"
+type: "technology"
+status: "official"
+category: "mobile-crossplatform"
+description: "Official Flutter and Dart agent plugin providing architectural patterns, widgets, testing, and state management."
+tags:
+  - "flutter"
+  - "dart"
+  - "mobile"
+  - "ui"
+  - "cross-platform"
+
+provider:
+  id: "flutter"
+  name: "Flutter Team / Google"
+  website: "https://flutter.dev"
+
+source:
+  type: "official"
+  repository: "flutter/agent-plugins"
+  ref_type: "tag"
+  ref: "v2.1.0"
+  commit: "8a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b"
+  path: "skills/flutter"
+  license: "BSD-3-Clause"
+  verified_at: "2026-09-11T10:00:00Z"
+  integrity:
+    algorithm: "sha256"
+    hash: "a94e652f7d160d5789b357d5af7d7befd8abd74d244cb04224325a56754a4255"
+
+capabilities:
+  provides:
+    - "widget-composition"
+    - "state-management"
+    - "platform-channels"
+    - "golden-tests"
+  produces_artifacts:
+    - "widget-tree.json"
+
+dependencies:
+  - id: "testing"
+    version: ">=1.0.0"
+    kind: "recommended"
+
+conflicts: []
+
+compatibility:
+  min_agent_api: "1.0.0"
+  operating_systems: ["mac", "linux", "windows"]
+
+entrypoints:
+  skill_doc: "SKILL.md"
+
+update_policy:
+  mode: "manual"

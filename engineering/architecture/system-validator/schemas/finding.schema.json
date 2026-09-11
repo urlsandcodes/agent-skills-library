@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/engineering-skills/registry/main/engineering/architecture/system-validator/schemas/finding.schema.json",
+  "title": "AuditFinding",
+  "type": "object",
+  "required": [
+    "id",
+    "category",
+    "scenario",
+    "severity",
+    "status",
+    "affected_components",
+    "claim",
+    "evidence",
+    "required_behavior",
+    "verification_method"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Z0-9]{2,6}-[0-9]{3,4}$"
+    },
+    "category": { "type": "string" },
+    "scenario": { "type": "string" },
+    "severity": {
+      "type": "string",
+      "enum": ["critical", "high", "medium", "low"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["verified", "handled", "missing", "risk", "unknown", "not-applicable"]
+    },
+    "affected_components": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "claim": { "type": "string" },
+    "evidence": {
+      "type": "object",
+      "required": ["source_type", "location", "details"],
+      "additionalProperties": false,
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "enum": ["code", "test", "plan", "none"]
+        },
+        "location": { "type": "string" },
+        "details": { "type": "string" }
+      }
+    },
+    "required_behavior": { "type": "string" },
+    "verification_method": { "type": "string" }
+  }
+}

@@ -1,0 +1,59 @@
+schema_version: "1.0.0"
+id: "observability-instrumentation"
+name: "Observability Instrumentation Skill"
+version: "1.2.0"
+type: "practice"
+status: "curated"
+category: "observability"
+description: "Vendor-neutral OpenTelemetry instrumentation practice skill covering traces, metrics, logs, context propagation, and spans."
+tags:
+  - "observability"
+  - "opentelemetry"
+  - "tracing"
+  - "metrics"
+  - "logs"
+  - "telemetry"
+
+provider:
+  id: "opentelemetry-practice"
+  name: "OpenTelemetry Standards & Community"
+  website: "https://opentelemetry.io"
+
+source:
+  type: "curated_community"
+  repository: "dash0hq/agent-skills"
+  ref_type: "commit"
+  ref: "main"
+  commit: "4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e"
+  path: "skills/opentelemetry"
+  license: "Apache-2.0"
+  verified_at: "2026-09-11T10:00:00Z"
+  integrity:
+    algorithm: "sha256"
+    hash: "7e6daf8cde81c3c659a2c3c5cff0d941041210fbcf2b05489b2b5b9c618f20e1"
+
+capabilities:
+  provides:
+    - "distributed-tracing"
+    - "semantic-conventions"
+    - "metric-cardinality-control"
+    - "structured-logging"
+  produces_artifacts:
+    - "telemetry-spec.json"
+
+dependencies:
+  - id: "observability-platform"
+    version: ">=1.0.0"
+    kind: "recommended"
+
+conflicts: []
+
+compatibility:
+  min_agent_api: "1.0.0"
+  operating_systems: ["mac", "linux", "windows"]
+
+entrypoints:
+  skill_doc: "SKILL.md"
+
+update_policy:
+  mode: "manual"

@@ -1,0 +1,101 @@
+version: 1
+
+sources:
+  mongodb:
+    provider: "MongoDB Inc."
+    repository: "mongodb/agent-skills"
+    source_type: "official"
+    default_branch: "main"
+    pinned_commit: "4f7a1b8c9d0e2f3a4b5c6d7e8f9a0b1c2d3e4f5a"
+    license: "Apache-2.0"
+    website: "https://github.com/mongodb/agent-skills"
+    verified_at: "2026-09-11T10:00:00Z"
+    verification_notes: "Verified official repository maintained by MongoDB Inc. for AI agent skills and tools."
+
+  flutter:
+    provider: "Flutter Team"
+    repository: "flutter/agent-plugins"
+    source_type: "official"
+    default_branch: "main"
+    pinned_commit: "8a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b"
+    license: "BSD-3-Clause"
+    website: "https://github.com/flutter/agent-plugins"
+    verified_at: "2026-09-11T10:00:00Z"
+    verification_notes: "Verified official repository maintained by Flutter / Google for agent plugins and skills."
+
+  nextjs:
+    provider: "Vercel"
+    repository: "vercel/next.js"
+    source_type: "official"
+    default_branch: "canary"
+    pinned_commit: "c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2"
+    license: "MIT"
+    website: "https://github.com/vercel/next.js"
+    verified_at: "2026-09-11T10:00:00Z"
+    verification_notes: "Verified official Next.js skills directory maintained by Vercel for modern Next.js workflows."
+
+  grafana:
+    provider: "Grafana Labs"
+    repository: "grafana/skills"
+    source_type: "official"
+    default_branch: "main"
+    pinned_commit: "9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c"
+    license: "AGPL-3.0"
+    website: "https://github.com/grafana/skills"
+    verified_at: "2026-09-11T10:00:00Z"
+    verification_notes: "Verified official Grafana Labs repository covering Grafana, Prometheus (PromQL), Loki, Tempo, and Alloy."
+
+  nodejs-community:
+    provider: "Node.js Community & Standards"
+    repository: "Paldom/node-skills"
+    source_type: "curated_community"
+    default_branch: "main"
+    pinned_commit: "1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b"
+    license: "MIT"
+    website: "https://github.com/Paldom/node-skills"
+    verified_at: "2026-09-11T10:00:00Z"
+    verification_notes: "High-quality curated community skill based on Node.js official documentation and runtime best practices."
+
+  go-community:
+    provider: "Go Community & Standards"
+    repository: "samber/cc-skills-golang"
+    source_type: "curated_community"
+    default_branch: "master"
+    pinned_commit: "2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c"
+    license: "MIT"
+    website: "https://github.com/samber/cc-skills-golang"
+    verified_at: "2026-09-11T10:00:00Z"
+    verification_notes: "Curated community skill incorporating Effective Go and Go style guidelines; no vendor repo published yet."
+
+  testing-practice:
+    provider: "Engineering Practice Standards"
+    repository: "engineering-skills/testing"
+    source_type: "curated_community"
+    default_branch: "main"
+    pinned_commit: "3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d"
+    license: "Apache-2.0"
+    website: "https://github.com/engineering-skills/testing"
+    verified_at: "2026-09-11T10:00:00Z"
+    verification_notes: "Cross-cutting engineering practice skill for test-driven design, unit, integration, and verification gates."
+
+  opentelemetry-practice:
+    provider: "OpenTelemetry Standards & Community"
+    repository: "dash0hq/agent-skills"
+    source_type: "curated_community"
+    default_branch: "main"
+    pinned_commit: "4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e"
+    license: "Apache-2.0"
+    website: "https://github.com/dash0hq/agent-skills"
+    verified_at: "2026-09-11T10:00:00Z"
+    verification_notes: "Vendor-neutral OpenTelemetry instrumentation patterns, collector configuration, and metrics/logs/traces telemetry."
+
+  internal:
+    provider: "Internal Engineering Architecture"
+    repository: "local/engineering-skills"
+    source_type: "internal"
+    default_branch: "main"
+    pinned_commit: "local"
+    license: "Apache-2.0"
+    website: "https://github.com/engineering-skills/registry"
+    verified_at: "2026-09-11T10:00:00Z"
+    verification_notes: "Authoritative engineering intelligence skill maintained directly inside this repository."

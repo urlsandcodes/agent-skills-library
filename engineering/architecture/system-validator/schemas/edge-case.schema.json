@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/engineering-skills/registry/main/engineering/architecture/system-validator/schemas/edge-case.schema.json",
+  "title": "EdgeCaseRecord",
+  "type": "object",
+  "required": [
+    "id",
+    "category",
+    "scenario",
+    "severity",
+    "status",
+    "affected_components",
+    "required_behavior",
+    "test_required"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Z0-9]{2,6}-[0-9]{3,4}$"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "validation-boundaries",
+        "null-missing-input",
+        "invalid-state-transition",
+        "duplicate-request",
+        "race-condition",
+        "concurrency",
+        "retries",
+        "partial-failure",
+        "timeout",
+        "external-service-failure",
+        "authentication",
+        "authorization",
+        "session-expiration",
+        "session-replacement",
+        "idempotency",
+        "transaction-boundary",
+        "consistency",
+        "caching",
+        "stale-state",
+        "queue-failure",
+        "background-worker-failure",
+        "webhook-duplication",
+        "out-of-order-events",
+        "resource-cleanup",
+        "rollback",
+        "data-migration",
+        "backward-compatibility",
+        "observability-gap"
+      ]
+    },
+    "scenario": { "type": "string", "minLength": 5 },
+    "severity": {
+      "type": "string",
+      "enum": ["critical", "high", "medium", "low"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["verified", "handled", "missing", "risk", "unknown", "not-applicable"]
+    },
+    "affected_components": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "required_behavior": { "type": "string", "minLength": 10 },
+    "test_required": { "type": "boolean" },
+    "remediation": { "type": "string" }
+  }
+}

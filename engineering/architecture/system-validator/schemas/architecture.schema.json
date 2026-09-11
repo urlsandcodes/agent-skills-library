@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/engineering-skills/registry/main/engineering/architecture/system-validator/schemas/architecture.schema.json",
+  "title": "ArchitectureGroundTruth",
+  "type": "object",
+  "required": [
+    "project_name",
+    "updated_at",
+    "domains",
+    "shared_entities",
+    "shared_state",
+    "external_integrations",
+    "persistence",
+    "invariants",
+    "risks"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "project_name": { "type": "string" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "domains": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "components", "entry_points", "flows"],
+        "properties": {
+          "name": { "type": "string" },
+          "components": { "type": "array", "items": { "type": "string" } },
+          "entry_points": { "type": "array", "items": { "type": "string" } },
+          "flows": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "shared_entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["entity", "accessed_by"],
+        "properties": {
+          "entity": { "type": "string" },
+          "accessed_by": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "shared_state": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["state_store", "reader_flows", "writer_flows", "concurrency_controls"],
+        "properties": {
+          "state_store": { "type": "string" },
+          "reader_flows": { "type": "array", "items": { "type": "string" } },
+          "writer_flows": { "type": "array", "items": { "type": "string" } },
+          "concurrency_controls": { "type": "string" }
+        }
+      }
+    },
+    "external_integrations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "type", "failure_mode"],
+        "properties": {
+          "name": { "type": "string" },
+          "type": { "type": "string" },
+          "failure_mode": { "type": "string" }
+        }
+      }
+    },
+    "persistence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["layer", "technology", "transaction_boundaries"],
+        "properties": {
+          "layer": { "type": "string" },
+          "technology": { "type": "string" },
+          "transaction_boundaries": { "type": "string" }
+        }
+      }
+    },
+    "invariants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "description", "enforced_by", "classification"],
+        "properties": {
+          "id": { "type": "string" },
+          "description": { "type": "string" },
+          "enforced_by": { "type": "string" },
+          "classification": {
+            "type": "string",
+            "enum": ["verified", "known", "risk", "unknown"]
+          }
+        }
+      }
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "component", "risk", "mitigation"],
+        "properties": {
+          "id": { "type": "string" },
+          "component": { "type": "string" },
+          "risk": { "type": "string" },
+          "mitigation": { "type": "string" }
+        }
+      }
+    }
+  }
+}

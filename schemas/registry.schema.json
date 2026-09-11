@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/engineering-skills/registry/main/schemas/registry.schema.json",
+  "title": "RegistryCatalog",
+  "type": "object",
+  "required": ["version", "updated_at", "skills"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "type": "integer", "minimum": 1 },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "type",
+          "category",
+          "status",
+          "source_id",
+          "manifest_path",
+          "tags"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+([.-][a-z0-9]+)*$"
+          },
+          "name": { "type": "string", "minLength": 2, "maxLength": 100 },
+          "type": {
+            "type": "string",
+            "enum": ["technology", "practice", "intelligence"]
+          },
+          "category": { "type": "string" },
+          "status": {
+            "type": "string",
+            "enum": ["official", "curated", "internal", "deprecated"]
+          },
+          "source_id": { "type": "string" },
+          "manifest_path": { "type": "string" },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "version": { "type": "string" },
+          "description": { "type": "string" },
+          "dependencies": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "kind"],
+              "properties": {
+                "id": { "type": "string" },
+                "version": { "type": "string" },
+                "kind": { "type": "string", "enum": ["hard", "recommended", "optional"] }
+              }
+            }
+          },
+          "conflicts": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

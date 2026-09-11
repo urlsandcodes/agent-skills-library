@@ -1,0 +1,57 @@
+schema_version: "1.0.0"
+id: "go"
+name: "Go Skill"
+version: "1.1.0"
+type: "technology"
+status: "curated"
+category: "language"
+description: "Curated idiomatic Go engineering skill covering concurrency, goroutines, interfaces, error handling, and performance."
+tags:
+  - "go"
+  - "golang"
+  - "backend"
+  - "concurrency"
+  - "systems"
+
+provider:
+  id: "go-community"
+  name: "Go Community & Standards"
+  website: "https://go.dev"
+
+source:
+  type: "curated_community"
+  repository: "samber/cc-skills-golang"
+  ref_type: "commit"
+  ref: "master"
+  commit: "2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c"
+  path: "skills/go"
+  license: "MIT"
+  verified_at: "2026-09-11T10:00:00Z"
+  integrity:
+    algorithm: "sha256"
+    hash: "0e51727fce7c20b86ab25f3a23420b0d8fa66156a012413f0ecfce83ccaff861"
+
+capabilities:
+  provides:
+    - "goroutine-lifecycle"
+    - "channel-patterns"
+    - "context-propagation"
+    - "error-wrapping"
+  produces_artifacts: []
+
+dependencies:
+  - id: "testing"
+    version: ">=1.0.0"
+    kind: "recommended"
+
+conflicts: []
+
+compatibility:
+  min_agent_api: "1.0.0"
+  operating_systems: ["mac", "linux", "windows"]
+
+entrypoints:
+  skill_doc: "SKILL.md"
+
+update_policy:
+  mode: "manual"

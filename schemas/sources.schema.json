@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/engineering-skills/registry/main/schemas/sources.schema.json",
+  "title": "SourcesCatalog",
+  "type": "object",
+  "required": ["version", "sources"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "type": "integer", "minimum": 1 },
+    "sources": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "provider",
+          "repository",
+          "source_type",
+          "default_branch",
+          "pinned_commit",
+          "license",
+          "verified_at"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "provider": { "type": "string" },
+          "repository": { "type": "string" },
+          "source_type": {
+            "type": "string",
+            "enum": ["official", "curated_community", "internal"]
+          },
+          "default_branch": { "type": "string" },
+          "pinned_commit": {
+            "type": "string",
+            "pattern": "^([a-f0-9]{40}|local)$"
+          },
+          "license": { "type": "string" },
+          "website": { "type": "string" },
+          "verified_at": { "type": "string", "format": "date-time" },
+          "verification_notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}

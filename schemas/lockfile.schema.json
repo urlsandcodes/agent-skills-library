@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/engineering-skills/registry/main/schemas/lockfile.schema.json",
+  "title": "SkillsLockfile",
+  "type": "object",
+  "required": ["lockfile_version", "generated_at", "target_directory", "skills"],
+  "additionalProperties": false,
+  "properties": {
+    "lockfile_version": { "type": "integer", "minimum": 1 },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "target_directory": { "type": "string" },
+    "skills": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "version",
+          "source_type",
+          "repository",
+          "commit",
+          "integrity",
+          "install_reason",
+          "dependencies"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "version": { "type": "string" },
+          "source_type": {
+            "type": "string",
+            "enum": ["official", "curated_community", "internal"]
+          },
+          "repository": { "type": "string" },
+          "commit": { "type": "string" },
+          "integrity": { "type": "string" },
+          "install_reason": {
+            "type": "string",
+            "enum": ["direct", "dependency", "recommended"]
+          },
+          "dependencies": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "installed_at": { "type": "string", "format": "date-time" }
+        }
+      }
+    }
+  }
+}

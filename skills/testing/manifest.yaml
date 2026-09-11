@@ -1,0 +1,55 @@
+schema_version: "1.0.0"
+id: "testing"
+name: "Engineering Testing Skill"
+version: "1.0.0"
+type: "practice"
+status: "curated"
+category: "quality-engineering"
+description: "Comprehensive software engineering practice skill for test pyramids, mock boundaries, contract tests, and regression guards."
+tags:
+  - "testing"
+  - "qa"
+  - "unit-tests"
+  - "integration-tests"
+  - "tdd"
+
+provider:
+  id: "testing-practice"
+  name: "Engineering Practice Standards"
+  website: "https://github.com/engineering-skills/testing"
+
+source:
+  type: "curated_community"
+  repository: "engineering-skills/testing"
+  ref_type: "commit"
+  ref: "main"
+  commit: "3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d"
+  path: "skills/testing"
+  license: "Apache-2.0"
+  verified_at: "2026-09-11T10:00:00Z"
+  integrity:
+    algorithm: "sha256"
+    hash: "dd07b8f92130806006f419a955fed86cd6a379705504128c68cfbbdfac7b3659"
+
+capabilities:
+  provides:
+    - "test-pyramid-strategy"
+    - "mock-isolation-rules"
+    - "contract-testing"
+    - "mutation-testing"
+  produces_artifacts:
+    - "test-plan.json"
+
+dependencies: []
+
+conflicts: []
+
+compatibility:
+  min_agent_api: "1.0.0"
+  operating_systems: ["mac", "linux", "windows"]
+
+entrypoints:
+  skill_doc: "SKILL.md"
+
+update_policy:
+  mode: "manual"

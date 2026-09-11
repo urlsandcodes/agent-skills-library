@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Entrypoint wrapper for skills CLI
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+if [ -f "$DIR/.venv/bin/python" ]; then
+    exec "$DIR/.venv/bin/python" "$DIR/tools/cli.py" "$@"
+else
+    exec python3 "$DIR/tools/cli.py" "$@"
+fi

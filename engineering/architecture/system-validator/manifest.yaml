@@ -1,0 +1,61 @@
+schema_version: "1.0.0"
+id: "architecture.system-validator"
+name: "System Architecture & Edge-Case Validator"
+version: "1.0.0"
+type: "intelligence"
+status: "internal"
+category: "architecture"
+description: "Expert software architect and QA verification engine for living ground-truth architecture, edge-case auditing, and invariant checks."
+tags:
+  - "architecture"
+  - "edge-cases"
+  - "verification"
+  - "qa"
+  - "governance"
+  - "audit"
+  - "invariants"
+
+provider:
+  id: "internal"
+  name: "Internal Engineering Architecture"
+  website: "https://github.com/engineering-skills/registry"
+
+source:
+  type: "internal"
+  repository: "local/engineering-skills"
+  ref_type: "local"
+  ref: "v1.0.0"
+  commit: "local"
+  path: "engineering/architecture/system-validator"
+  license: "Apache-2.0"
+  verified_at: "2026-09-11T10:00:00Z"
+  integrity:
+    algorithm: "sha256"
+    hash: "df6e0a5d0768e00db0d51d42ee5d4a4f0c9cbaa182d4e4a4634f281011932127"
+
+capabilities:
+  provides:
+    - "codebase-architectural-analysis"
+    - "plan-edge-case-audit"
+    - "implementation-invariant-validation"
+    - "modular-mermaid-generation"
+  produces_artifacts:
+    - ".agents/architecture.md"
+    - "audit-findings.json"
+    - "validation-report.json"
+
+dependencies: []
+
+conflicts: []
+
+compatibility:
+  min_agent_api: "1.0.0"
+  operating_systems: ["mac", "linux", "windows"]
+
+entrypoints:
+  skill_doc: "SKILL.md"
+  schema_dir: "schemas"
+  template_dir: "templates"
+
+update_policy:
+  mode: "manual"

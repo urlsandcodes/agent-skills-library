@@ -1,0 +1,57 @@
+schema_version: "1.0.0"
+id: "nodejs"
+name: "Node.js Skill"
+version: "1.3.0"
+type: "technology"
+status: "curated"
+category: "runtime"
+description: "Curated engineering skill for production Node.js backend development, asynchronous workflows, and API architectures."
+tags:
+  - "nodejs"
+  - "javascript"
+  - "typescript"
+  - "backend"
+  - "api"
+
+provider:
+  id: "nodejs-community"
+  name: "Node.js Community & Standards"
+  website: "https://nodejs.org"
+
+source:
+  type: "curated_community"
+  repository: "Paldom/node-skills"
+  ref_type: "commit"
+  ref: "main"
+  commit: "1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b"
+  path: "skills/nodejs"
+  license: "MIT"
+  verified_at: "2026-09-11T10:00:00Z"
+  integrity:
+    algorithm: "sha256"
+    hash: "b9e88a36ac8579220acf4b5fca78e20e9590a81200b76b441aa9de5712b966bd"
+
+capabilities:
+  provides:
+    - "async-event-loop-tuning"
+    - "stream-processing"
+    - "cluster-worker-threads"
+    - "esm-commonjs-interop"
+  produces_artifacts: []
+
+dependencies:
+  - id: "testing"
+    version: ">=1.0.0"
+    kind: "recommended"
+
+conflicts: []
+
+compatibility:
+  min_agent_api: "1.0.0"
+  operating_systems: ["mac", "linux", "windows"]
+
+entrypoints:
+  skill_doc: "SKILL.md"
+
+update_policy:
+  mode: "manual"

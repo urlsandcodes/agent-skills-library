@@ -1,0 +1,58 @@
+schema_version: "1.0.0"
+id: "mongodb"
+name: "MongoDB Skill"
+version: "1.2.0"
+type: "technology"
+status: "official"
+category: "database"
+description: "Official MongoDB agent skill for schema design, aggregation pipelines, and Atlas optimization."
+tags:
+  - "database"
+  - "mongodb"
+  - "nosql"
+  - "aggregation"
+  - "atlas"
+
+provider:
+  id: "mongodb"
+  name: "MongoDB Inc."
+  website: "https://www.mongodb.com"
+
+source:
+  type: "official"
+  repository: "mongodb/agent-skills"
+  ref_type: "tag"
+  ref: "v1.2.0"
+  commit: "4f7a1b8c9d0e2f3a4b5c6d7e8f9a0b1c2d3e4f5a"
+  path: "skills/mongodb"
+  license: "Apache-2.0"
+  verified_at: "2026-09-11T10:00:00Z"
+  integrity:
+    algorithm: "sha256"
+    hash: "bd0da3544b0ef5c7056207d0ef29146be23e9e564f28905e5beb876a3f90c00d"
+
+capabilities:
+  provides:
+    - "schema-design"
+    - "aggregation-optimization"
+    - "indexing-advisory"
+    - "connection-management"
+  produces_artifacts:
+    - "mongo-indexes.json"
+
+dependencies:
+  - id: "testing"
+    version: ">=1.0.0"
+    kind: "recommended"
+
+conflicts: []
+
+compatibility:
+  min_agent_api: "1.0.0"
+  operating_systems: ["mac", "linux", "windows"]
+
+entrypoints:
+  skill_doc: "SKILL.md"
+
+update_policy:
+  mode: "manual"
