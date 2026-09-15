@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/engineering-skills/registry/main/engineering/fintech/payments-phonepe/schemas/phonepe-audit.schema.json",
+  "title": "PhonePePaymentGatewayAudit",
+  "type": "object",
+  "required": [
+    "target",
+    "audited_at",
+    "overall_score",
+    "pillar_scores",
+    "findings",
+    "recommendations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "target": { "type": "string" },
+    "audited_at": { "type": "string", "format": "date-time" },
+    "overall_score": { "type": "number", "minimum": 0, "maximum": 100 },
+    "pillar_scores": {
+      "type": "object",
+      "required": [
+        "v2_oauth_auth",
+        "order_creation_payload",
+        "webhook_signature_verification",
+        "server_status_reconciliation"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "v2_oauth_auth": { "type": "number", "minimum": 0, "maximum": 25 },
+        "order_creation_payload": { "type": "number", "minimum": 0, "maximum": 25 },
+        "webhook_signature_verification": { "type": "number", "minimum": 0, "maximum": 25 },
+        "server_status_reconciliation": { "type": "number", "minimum": 0, "maximum": 25 }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "pillar", "status", "title", "details", "remediation"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "pillar": {
+            "type": "string",
+            "enum": [
+              "v2_oauth_auth",
+              "order_creation_payload",
+              "webhook_signature_verification",
+              "server_status_reconciliation"
+            ]
+          },
+          "status": { "type": "string", "enum": ["pass", "warn", "fail"] },
+          "title": { "type": "string" },
+          "details": { "type": "string" },
+          "remediation": { "type": "string" }
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/engineering-skills/registry/main/engineering/mobile/offline-first-sync/schemas/sync-protocol-audit.schema.json",
+  "title": "OfflineFirstSyncAudit",
+  "type": "object",
+  "required": [
+    "target",
+    "audited_at",
+    "overall_score",
+    "pillar_scores",
+    "findings",
+    "recommendations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "target": { "type": "string" },
+    "audited_at": { "type": "string", "format": "date-time" },
+    "overall_score": { "type": "number", "minimum": 0, "maximum": 100 },
+    "pillar_scores": {
+      "type": "object",
+      "required": [
+        "local_persistence",
+        "change_data_capture",
+        "conflict_resolution",
+        "transport_resilience"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "local_persistence": { "type": "number", "minimum": 0, "maximum": 25 },
+        "change_data_capture": { "type": "number", "minimum": 0, "maximum": 25 },
+        "conflict_resolution": { "type": "number", "minimum": 0, "maximum": 25 },
+        "transport_resilience": { "type": "number", "minimum": 0, "maximum": 25 }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "pillar", "status", "title", "details", "remediation"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "pillar": {
+            "type": "string",
+            "enum": [
+              "local_persistence",
+              "change_data_capture",
+              "conflict_resolution",
+              "transport_resilience"
+            ]
+          },
+          "status": { "type": "string", "enum": ["pass", "warn", "fail"] },
+          "title": { "type": "string" },
+          "details": { "type": "string" },
+          "remediation": { "type": "string" }
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

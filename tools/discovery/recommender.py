@@ -43,6 +43,8 @@ class DiscoveryEngine:
         "testing": [r"\btests?\b", r"\btesting\b", r"\bqa\b", r"\btdd\b", r"\bunit test\b", r"\btest coverage\b"],
         "observability-instrumentation": [r"\bopentelemetry\b", r"\botel\b", r"\btracing\b", r"\btelemetry\b", r"\bmetrics\b", r"\bspans?\b"],
         "observability-platform": [r"\bgrafana\b", r"\bprometheus\b", r"\bpromql\b", r"\bloki\b", r"\btempo\b", r"\balloy\b", r"\bmonitoring\b", r"\bdashboards?\b"],
+        "offline-first-sync": [r"\boffline[ -]?first\b", r"\bsync(hroniz(e|ation))?\b", r"\bcrdt\b", r"\bconflict resolution\b", r"\boutbox\b", r"\btombstone\b"],
+        "fintech-payments-phonepe": [r"\bphonepe\b", r"\bpayment gateway\b", r"\bupi\b", r"\bcheckout\b", r"\bfintech\b", r"\bautopay\b"],
     }
 
     # Governance policies triggered by production/architecture scope
